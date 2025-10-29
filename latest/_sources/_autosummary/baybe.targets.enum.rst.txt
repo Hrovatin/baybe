@@ -19,8 +19,7 @@ baybe.targets.enum
       :toctree:                                       
       :template: custom-class-template.rst              
    
-      TargetMode
-      TargetTransformation
+      MatchMode
    
    
 

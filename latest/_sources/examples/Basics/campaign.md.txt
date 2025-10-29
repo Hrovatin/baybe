@@ -88,7 +88,7 @@ objective.
 
 
 ```python
-objective = SingleTargetObjective(target=NumericalTarget(name="yield", mode="MAX"))
+objective = SingleTargetObjective(target=NumericalTarget(name="yield"))
 ```
 
 We now finally create the campaign using the objects configure previously.
@@ -119,13 +119,13 @@ print(recommendation)
     
     
     Recommended measurements with batch_size = 2: 
-               Solvent               Base         Ligand  Temperature  \
-    170  Butyornitrile  Potassium acetate  (t-Bu)PhCPhos        120.0   
-    108  Butyornitrile     Cesium acetate  (t-Bu)PhCPhos         90.0   
+               Solvent            Base                        Ligand  Temperature  \
+    230           DMAc  Cesium acetate                     BrettPhos        105.0   
+    132  Butyornitrile  Cesium acetate  Di-tert-butylphenylphosphine        120.0   
     
          Concentration  
-    170          0.153  
-    108          0.057  
+    230          0.153  
+    132          0.057  
 
 
 Adding target values is done by creating a new column in the `recommendation`
@@ -143,13 +143,13 @@ print(recommendation)
     
     
     Recommended experiments with fake measured values: 
-               Solvent               Base         Ligand  Temperature  \
-    170  Butyornitrile  Potassium acetate  (t-Bu)PhCPhos        120.0   
-    108  Butyornitrile     Cesium acetate  (t-Bu)PhCPhos         90.0   
+               Solvent            Base                        Ligand  Temperature  \
+    230           DMAc  Cesium acetate                     BrettPhos        105.0   
+    132  Butyornitrile  Cesium acetate  Di-tert-butylphenylphosphine        120.0   
     
          Concentration      yield  
-    170          0.153   6.338709  
-    108          0.057  14.990175  
+    230          0.153  17.811691  
+    132          0.057 -41.521424  
 
 
 

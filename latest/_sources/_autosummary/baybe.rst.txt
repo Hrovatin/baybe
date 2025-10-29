@@ -59,7 +59,7 @@
 
    targets
 
-   telemetry
+   transformations
 
    utils
 
