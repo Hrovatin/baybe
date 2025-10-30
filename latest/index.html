@@ -1122,17 +1122,18 @@
 <section class="tex2jax_ignore mathjax_ignore" id="baybe-a-bayesian-back-end-for-design-of-experiments">
 <h1>BayBE — A Bayesian Back End for Design of Experiments<a class="headerlink" href="#baybe-a-bayesian-back-end-for-design-of-experiments" title="Link to this heading">¶</a></h1>
 <p>The <strong>Bay</strong>esian <strong>B</strong>ack <strong>E</strong>nd (<strong>BayBE</strong>)
-helps to find a <strong>good parameter setting</strong>
-within a complex parameter search space.</p>
+helps to find a <strong>good parameter settings</strong></p>
+<p>within a complex parameter search space.</p>
 <div align="center">
-<p><img alt="complex search space" src="docs/_static/complex_search_space_automatic.svg" /></p>
+<p><img alt="complex search space" src="docs/_static/complex_search_space_light.svg" /></p>
 </div>
 <p>Example use-cases:</p>
 <ul class="simple">
 <li><p>🧪 Find chemical reaction conditions or process parameters</p></li>
-<li><p>🥣 Create materials, chemical mixtures, or formulations with desired properties</p></li>
+<li><p>🥣 Create materials, chemical mixtures or formulations with desired properties</p></li>
 <li><p>✈️ Optimize the 3D shape of a physical object</p></li>
-<li><p>🖥️ Select model hyperparameters</p></li>
+<li><p>🖥️ Optimize an in silico simulation</p></li>
+<li><p>⚙️ Select model hyperparameters</p></li>
 <li><p>🫖 Find tasty espresso machine settings</p></li>
 </ul>
 <p>This is achieved via <strong>Bayesian Design of Experiments</strong>,
@@ -1154,9 +1155,9 @@ The following provides a non-comprehensive overview:</p>
 </ul>
 </li>
 <li><p>🏛️ Leverage <strong>historic data</strong> to accelerate optimization via transfer learning.</p></li>
-<li><p>🌀 <strong>Flexible</strong> definition of target outcomes, parameter search spaces, and optimization strategies:</p>
+<li><p>🌀 <strong>Flexible</strong> definition of target outcomes, parameter search spaces and optimization strategies:</p>
 <ul>
-<li><p>🎯 Option to use numerical targets (e.g., experimental outcome values) or binary targets (e.g., good/bad classification of experimental results). Targets can be minimized, maximized, or matched to a specific value.</p></li>
+<li><p>🎯 Option to use numerical targets (e.g., experimental outcome values) or binary targets (e.g., good/bad classification of experimental results). Targets can be minimized, maximized or matched to a specific value.</p></li>
 <li><p>👥👥 Multiple targets can be optimized at once (e.g., via Pareto optimization).</p></li>
 <li><p>🎭 Both continuous and discrete parameters can be used within a single search space.</p></li>
 <li><p>🔢 The maximal number of mixture components can be defined via cardinality constraints.</p></li>
@@ -1178,15 +1179,16 @@ Based on this information and any <strong>available data</strong> about outcomes
 BayBE will <strong>recommend the next set of parameter combinations</strong> to be <strong>measured</strong>.
 To inform the next recommendation cycle, the newly generated measurements can be added to BayBE.</p>
 <div align="center">
-<p><img alt="quick start" src="docs/_static/quick_start_automatic.svg" /></p>
+<p><img alt="quick start" src="docs/_static/quick_start_light.svg" /></p>
 </div>
-<p>From the user-perspective, the most important part is the “design” step.
+<p>From the user perspective, the most important part is the “design” step.
 If you are new to BayBE, we suggest consulting our
 <a class="reference external" href="https://emdgroup.github.io/baybe/stable/faq.html">design checklist</a>
 to help you with the design setup.</p>
 <p>Below we show a simple optimization procedure, starting with the design step and subsequently
 performing the recommendation loop.
-The provided example aims to maximize the yield of a chemical reaction by adjusting reaction parameters.</p>
+The provided example aims to maximize the yield of a chemical reaction by adjusting its parameters
+(also known as reaction conditions).</p>
 <p>First, install BayBE into your Python environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>baybe<span class="w"> </span>
 </pre></div>
@@ -1216,7 +1218,7 @@ of the user guide.</p>
 <h3>Defining the Search Space<a class="headerlink" href="#defining-the-search-space" title="Link to this heading">¶</a></h3>
 <p>Next, we inform BayBE about the available “control knobs”, that is, the underlying
 reaction <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> we can tune (e.g., granularity,
-pressure, and solvent) to optimize the yield. We also need to specify
+pressure and solvent) to optimize the yield. We also need to specify
 which values individual parameters can take.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">CategoricalParameter</span><span class="p">,</span>
@@ -1268,7 +1270,7 @@ and alternative ways of construction.</p>
 </section>
 <section id="optional-defining-the-optimization-strategy">
 <h3>Optional: Defining the Optimization Strategy<a class="headerlink" href="#optional-defining-the-optimization-strategy" title="Link to this heading">¶</a></h3>
-<p>As an optional step, we can specify details on how the optimization of the experiment should be
+<p>As an optional step, we can specify details on how the optimization of the experimental settings should be
 performed. If omitted, BayBE will choose a default setting.</p>
 <p>For our example, we combine two recommenders via a so-called meta recommender named
 <code class="docutils literal notranslate"><span class="pre">TwoPhaseMetaRecommender</span></code>:</p>
@@ -1290,19 +1292,19 @@ the parameters will be recommended with the <code class="docutils literal notran
 </pre></div>
 </div>
 <p>For more details on the different recommenders, their underlying algorithmic
-details, and their configuration settings, see the
+details and their configuration settings, see the
 <a class="reference external" href="https://emdgroup.github.io/baybe/stable/userguide/recommenders.html">recommenders section</a>
 of the user guide.</p>
 </section>
 <section id="the-optimization-loop">
 <h3>The Optimization Loop<a class="headerlink" href="#the-optimization-loop" title="Link to this heading">¶</a></h3>
-<p>We can now construct a <code class="docutils literal notranslate"><span class="pre">Campaign</span></code> that performs the Bayesian optimization of the experiment:</p>
+<p>We can now construct a <code class="docutils literal notranslate"><span class="pre">Campaign</span></code> that performs the Bayesian optimization of the experimental settings:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe</span><span class="w"> </span><span class="kn">import</span> <span class="n">Campaign</span>
 
 <span class="n">campaign</span> <span class="o">=</span> <span class="n">Campaign</span><span class="p">(</span><span class="n">searchspace</span><span class="p">,</span> <span class="n">objective</span><span class="p">,</span> <span class="n">recommender</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>With this object at hand, we can start our experimentation cycle.
+<p>With this object at hand, we can start our optimization cycle.
 In particular:</p>
 <ul class="simple">
 <li><p>The campaign can <code class="docutils literal notranslate"><span class="pre">recommend</span></code> new experiments.</p></li>
@@ -1312,7 +1314,7 @@ to the campaign’s database.</p></li>
 <p>Note that these two steps can be performed in any order.
 In particular, available measurements can be submitted at any time and also several
 times before querying the next recommendations.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">campaign</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Recommend three parameter settings</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">campaign</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Recommend three experimental settings to test</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1335,8 +1337,8 @@ target information to the campaign:</p>
 <p>With the newly provided data, BayBE can produce a refined recommendation for the next iteration.
 This loop typically continues until a desired target value is achieved in the experiment.</p>
 </section>
-<section id="inspect-the-progress-of-the-experiment-optimization">
-<h3>Inspect the progress of the experiment optimization<a class="headerlink" href="#inspect-the-progress-of-the-experiment-optimization" title="Link to this heading">¶</a></h3>
+<section id="inspect-the-progress-of-the-experimental-setting-optimization">
+<h3>Inspect the Progress of the Experimental Setting Optimization<a class="headerlink" href="#inspect-the-progress-of-the-experimental-setting-optimization" title="Link to this heading">¶</a></h3>
 <p>The below plot shows progression of a campaign that optimized direct arylation reaction
 by tuning the solvent, base and ligand
 (from <a class="reference external" href="https://doi.org/10.1038/s41586-021-03213-y">Shields, B.J. et al.</a>).
@@ -1375,7 +1377,7 @@ GitHub via git and specifying the corresponding
 <h3>From Local Clone<a class="headerlink" href="#from-local-clone" title="Link to this heading">¶</a></h3>
 <p>Alternatively, you can install the package from your own local copy.
 First, clone the repository, navigate to the repository root folder, check out the
-desired commit, and run:</p>
+desired commit and run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </div>

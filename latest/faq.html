@@ -1120,11 +1120,11 @@ your campaign, depending on your settings for the
 <a class="reference internal" href="_autosummary/baybe.campaign.Campaign.html#baybe.campaign.Campaign.allow_recommending_already_recommended" title="baybe.campaign.Campaign.allow_recommending_already_recommended"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_recommending_already_recommended</span></code></a> flags.</p>
 </div>
 </details><section id="checklist-for-designing-baybe-optimization-campaigns">
-<h2>Checklist for designing BayBE optimization campaigns<a class="headerlink" href="#checklist-for-designing-baybe-optimization-campaigns" title="Link to this heading">¶</a></h2>
+<h2>Checklist for Designing BayBE Optimization Campaigns<a class="headerlink" href="#checklist-for-designing-baybe-optimization-campaigns" title="Link to this heading">¶</a></h2>
 <p>This checklist collects <strong>common questions that you need to ask yourself</strong> when designing a BayBE optimization campaign. It also provides documentation references that will help you with the corresponding setup.</p>
 <p>Note that this is not a comprehensive guide of all BayBE’s functionalities, but rather a “quick start” meant to help you with the most basic design principles.</p>
 <section id="defining-targets">
-<h3>Defining targets<a class="headerlink" href="#defining-targets" title="Link to this heading">¶</a></h3>
+<h3>Defining Targets<a class="headerlink" href="#defining-targets" title="Link to this heading">¶</a></h3>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Should the target value be maximized, minimized, or be matched to a specific value?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -1139,7 +1139,7 @@ your campaign, depending on your settings for the
 </div>
 </details></section>
 <section id="defining-parameter-search-space">
-<h3>Defining parameter search space<a class="headerlink" href="#defining-parameter-search-space" title="Link to this heading">¶</a></h3>
+<h3>Defining Parameter Search Space<a class="headerlink" href="#defining-parameter-search-space" title="Link to this heading">¶</a></h3>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Are only some parameter values of interest/possible?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -1177,7 +1177,7 @@ discrete parameters or provide custom encodings.</p>
 </div>
 </details></section>
 <section id="account-for-specifics-of-data-availability-or-data-acquisition-procedure">
-<h3>Account for specifics of data availability or data acquisition procedure<a class="headerlink" href="#account-for-specifics-of-data-availability-or-data-acquisition-procedure" title="Link to this heading">¶</a></h3>
+<h3>Account for Specifics of Data Availability or Data Acquisition Procedure<a class="headerlink" href="#account-for-specifics-of-data-availability-or-data-acquisition-procedure" title="Link to this heading">¶</a></h3>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Is no prior data available and the experiments should be done in batches?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -1201,7 +1201,7 @@ discrete parameters or provide custom encodings.</p>
 </div>
 </details></section>
 <section id="advanced-adjust-how-recommendations-are-prioritized">
-<h3>Advanced: adjust how recommendations are prioritized<a class="headerlink" href="#advanced-adjust-how-recommendations-are-prioritized" title="Link to this heading">¶</a></h3>
+<h3>Advanced: Adjust how Recommendations are Prioritized<a class="headerlink" href="#advanced-adjust-how-recommendations-are-prioritized" title="Link to this heading">¶</a></h3>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Is the aim to reduce the overall uncertainty across different regions of the search space rather than optimize a specific objective?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -1269,11 +1269,11 @@ discrete parameters or provide custom encodings.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">FAQ</a><ul>
-<li><a class="reference internal" href="#checklist-for-designing-baybe-optimization-campaigns">Checklist for designing BayBE optimization campaigns</a><ul>
-<li><a class="reference internal" href="#defining-targets">Defining targets</a></li>
-<li><a class="reference internal" href="#defining-parameter-search-space">Defining parameter search space</a></li>
-<li><a class="reference internal" href="#account-for-specifics-of-data-availability-or-data-acquisition-procedure">Account for specifics of data availability or data acquisition procedure</a></li>
-<li><a class="reference internal" href="#advanced-adjust-how-recommendations-are-prioritized">Advanced: adjust how recommendations are prioritized</a></li>
+<li><a class="reference internal" href="#checklist-for-designing-baybe-optimization-campaigns">Checklist for Designing BayBE Optimization Campaigns</a><ul>
+<li><a class="reference internal" href="#defining-targets">Defining Targets</a></li>
+<li><a class="reference internal" href="#defining-parameter-search-space">Defining Parameter Search Space</a></li>
+<li><a class="reference internal" href="#account-for-specifics-of-data-availability-or-data-acquisition-procedure">Account for Specifics of Data Availability or Data Acquisition Procedure</a></li>
+<li><a class="reference internal" href="#advanced-adjust-how-recommendations-are-prioritized">Advanced: Adjust how Recommendations are Prioritized</a></li>
 </ul>
 </li>
 </ul>
