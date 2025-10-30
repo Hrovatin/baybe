@@ -1299,15 +1299,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments: 
-           Solvent             Base                        Ligand  \
-148  Butyornitrile  Cesium pivalate                     BrettPhos   
-19     Butyl Ester   Cesium acetate  Di-tert-butylphenylphosphine   
-330       p-Xylene   Cesium acetate                 (t-Bu)PhCPhos   
+           Solvent               Base                        Ligand  \
+185  Butyornitrile  Potassium acetate  Di-tert-butylphenylphosphine   
+362       p-Xylene    Cesium pivalate                     BrettPhos   
+176  Butyornitrile  Potassium acetate                     BrettPhos   
 
      Temperature  Concentration  
-148        105.0          0.100  
-19          90.0          0.100  
-330        120.0          0.057  
+185        105.0          0.153  
+362         90.0          0.153  
+176        105.0          0.153  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
@@ -1316,15 +1316,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
-           Solvent             Base                        Ligand  \
-148  Butyornitrile  Cesium pivalate                     BrettPhos   
-19     Butyl Ester   Cesium acetate  Di-tert-butylphenylphosphine   
-330       p-Xylene   Cesium acetate                 (t-Bu)PhCPhos   
+           Solvent               Base                        Ligand  \
+185  Butyornitrile  Potassium acetate  Di-tert-butylphenylphosphine   
+362       p-Xylene    Cesium pivalate                     BrettPhos   
+176  Butyornitrile  Potassium acetate                     BrettPhos   
 
      Temperature  Concentration      yield  
-148        105.0          0.100  61.608537  
-19          90.0          0.100  55.332526  
-330        120.0          0.057 -11.574163  
+185        105.0          0.153 -50.866994  
+362         90.0          0.153  43.365975  
+176        105.0          0.153 -19.763710  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
