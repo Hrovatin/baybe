@@ -1299,15 +1299,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments: 
-         Solvent                Base                        Ligand  \
-377     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
-320         DMAc  Potassium pivalate  Di-tert-butylphenylphosphine   
-19   Butyl Ester      Cesium acetate  Di-tert-butylphenylphosphine   
+           Solvent                Base                        Ligand  \
+62     Butyl Ester   Potassium acetate                 (t-Bu)PhCPhos   
+276           DMAc   Potassium acetate                 (t-Bu)PhCPhos   
+209  Butyornitrile  Potassium pivalate  Di-tert-butylphenylphosphine   
 
      Temperature  Concentration  
-377        120.0          0.153  
-320        105.0          0.153  
-19          90.0          0.100  
+62         120.0          0.153  
+276        120.0          0.057  
+209         90.0          0.153  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
@@ -1316,15 +1316,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
-         Solvent                Base                        Ligand  \
-377     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
-320         DMAc  Potassium pivalate  Di-tert-butylphenylphosphine   
-19   Butyl Ester      Cesium acetate  Di-tert-butylphenylphosphine   
+           Solvent                Base                        Ligand  \
+62     Butyl Ester   Potassium acetate                 (t-Bu)PhCPhos   
+276           DMAc   Potassium acetate                 (t-Bu)PhCPhos   
+209  Butyornitrile  Potassium pivalate  Di-tert-butylphenylphosphine   
 
      Temperature  Concentration      yield  
-377        120.0          0.153 -33.470515  
-320        105.0          0.153  51.824768  
-19          90.0          0.100  76.646658  
+62         120.0          0.153  99.110035  
+276        120.0          0.057 -68.318835  
+209         90.0          0.153   1.916212  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
