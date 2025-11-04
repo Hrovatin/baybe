@@ -1,6 +1,0 @@
-baybe.exceptions.IncompleteMeasurementsError
-============================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: IncompleteMeasurementsError

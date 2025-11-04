@@ -1,6 +1,0 @@
-baybe.exceptions.DeprecationError
-=================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: DeprecationError

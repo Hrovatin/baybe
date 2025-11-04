@@ -1,7 +1,0 @@
-baybe.serialization.core.converter
-==================================
-
-.. currentmodule:: baybe.serialization.core
-
-
-.. autodata:: converter

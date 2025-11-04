@@ -1,6 +1,0 @@
-baybe.utils.basic.convert\_to\_float
-====================================
-
-.. currentmodule:: baybe.utils.basic
-
-.. autofunction:: convert_to_float

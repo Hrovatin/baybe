@@ -1,6 +1,0 @@
-baybe.exceptions.IncompatibleSearchSpaceError
-=============================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: IncompatibleSearchSpaceError

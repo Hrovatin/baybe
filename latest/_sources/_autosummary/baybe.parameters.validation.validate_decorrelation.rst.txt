@@ -1,6 +1,0 @@
-baybe.parameters.validation.validate\_decorrelation
-===================================================
-
-.. currentmodule:: baybe.parameters.validation
-
-.. autofunction:: validate_decorrelation

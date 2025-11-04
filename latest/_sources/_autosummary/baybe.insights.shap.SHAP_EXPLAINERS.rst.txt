@@ -1,7 +1,0 @@
-baybe.insights.shap.SHAP\_EXPLAINERS
-====================================
-
-.. currentmodule:: baybe.insights.shap
-
-
-.. autodata:: SHAP_EXPLAINERS

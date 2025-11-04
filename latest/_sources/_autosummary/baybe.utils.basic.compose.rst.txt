@@ -1,6 +1,0 @@
-baybe.utils.basic.compose
-=========================
-
-.. currentmodule:: baybe.utils.basic
-
-.. autofunction:: compose

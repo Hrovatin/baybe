@@ -1,6 +1,0 @@
-baybe.exceptions.OptionalImportError
-====================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: OptionalImportError

@@ -1,6 +1,0 @@
-baybe.exceptions.UnidentifiedSubclassError
-==========================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: UnidentifiedSubclassError

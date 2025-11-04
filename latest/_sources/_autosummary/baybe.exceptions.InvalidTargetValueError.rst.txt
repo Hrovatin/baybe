@@ -1,6 +1,0 @@
-baybe.exceptions.InvalidTargetValueError
-========================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: InvalidTargetValueError

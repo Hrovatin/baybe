@@ -1,6 +1,0 @@
-baybe.utils.basic.match\_attributes
-===================================
-
-.. currentmodule:: baybe.utils.basic
-
-.. autofunction:: match_attributes

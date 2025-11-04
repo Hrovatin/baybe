@@ -1,7 +1,0 @@
-baybe.parameters.substance.Smiles
-=================================
-
-.. currentmodule:: baybe.parameters.substance
-
-
-.. autoclass:: Smiles

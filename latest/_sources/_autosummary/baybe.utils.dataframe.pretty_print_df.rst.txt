@@ -1,6 +1,0 @@
-baybe.utils.dataframe.pretty\_print\_df
-=======================================
-
-.. currentmodule:: baybe.utils.dataframe
-
-.. autofunction:: pretty_print_df

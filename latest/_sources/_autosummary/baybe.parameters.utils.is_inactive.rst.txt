@@ -1,6 +1,0 @@
-baybe.parameters.utils.is\_inactive
-===================================
-
-.. currentmodule:: baybe.parameters.utils
-
-.. autofunction:: is_inactive

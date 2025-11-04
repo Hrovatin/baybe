@@ -1,7 +1,0 @@
-baybe.utils.interval.ConvertibleToInterval
-==========================================
-
-.. currentmodule:: baybe.utils.interval
-
-
-.. autodata:: ConvertibleToInterval

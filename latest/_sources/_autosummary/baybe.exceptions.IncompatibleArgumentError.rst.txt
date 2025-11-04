@@ -1,6 +1,0 @@
-baybe.exceptions.IncompatibleArgumentError
-==========================================
-
-.. currentmodule:: baybe.exceptions
-
-.. autoexception:: IncompatibleArgumentError

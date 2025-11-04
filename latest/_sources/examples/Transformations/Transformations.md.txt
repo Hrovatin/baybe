@@ -1,8 +1,0 @@
-# Transformations
-
-These examples demonstrate BayBE's transformation functionality.
-```{toctree}
-:maxdepth: 1
-
-Laser Tuning<laser_tuning>
-```

@@ -1,7 +1,0 @@
-baybe.targets.binary.ChoiceValue
-================================
-
-.. currentmodule:: baybe.targets.binary
-
-
-.. autodata:: ChoiceValue

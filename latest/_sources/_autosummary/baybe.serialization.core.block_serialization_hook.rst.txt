@@ -1,6 +1,0 @@
-baybe.serialization.core.block\_serialization\_hook
-===================================================
-
-.. currentmodule:: baybe.serialization.core
-
-.. autofunction:: block_serialization_hook

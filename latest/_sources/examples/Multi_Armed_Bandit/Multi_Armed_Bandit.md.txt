@@ -1,8 +1,0 @@
-# Multi-Armed Bandit
-
-These examples demonstrate BayBE's Multi-Armed Bandit Capabilities.
-```{toctree}
-:maxdepth: 1
-
-Bernoulli Multi Armed Bandit<bernoulli_multi_armed_bandit>
-```

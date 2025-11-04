@@ -1,6 +1,0 @@
-baybe.utils.dataframe.create\_fake\_input
-=========================================
-
-.. currentmodule:: baybe.utils.dataframe
-
-.. autofunction:: create_fake_input
