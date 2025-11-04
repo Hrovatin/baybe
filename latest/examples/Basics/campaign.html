@@ -1183,13 +1183,9 @@ objective.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended measurements with batch_size = 2: 
-           Solvent               Base                        Ligand  \
-398       p-Xylene  Potassium acetate  Di-tert-butylphenylphosphine   
-140  Butyornitrile    Cesium pivalate                 (t-Bu)PhCPhos   
-
-     Temperature  Concentration  
-398         90.0          0.153  
-140        105.0          0.153  
+         Solvent               Base         Ligand  Temperature  Concentration
+43   Butyl Ester    Cesium pivalate      BrettPhos        120.0          0.100
+378     p-Xylene  Potassium acetate  (t-Bu)PhCPhos         90.0          0.057
 </pre></div>
 </div>
 <p>Adding target values is done by creating a new column in the <code class="docutils literal notranslate"><span class="pre">recommendation</span></code>
@@ -1202,13 +1198,13 @@ We then update the campaign by adding the measurements.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
-           Solvent               Base                        Ligand  \
-398       p-Xylene  Potassium acetate  Di-tert-butylphenylphosphine   
-140  Butyornitrile    Cesium pivalate                 (t-Bu)PhCPhos   
+         Solvent               Base         Ligand  Temperature  \
+43   Butyl Ester    Cesium pivalate      BrettPhos        120.0   
+378     p-Xylene  Potassium acetate  (t-Bu)PhCPhos         90.0   
 
-     Temperature  Concentration      yield  
-398         90.0          0.153 -73.600002  
-140        105.0          0.153 -15.318773  
+     Concentration      yield  
+43           0.100 -45.170740  
+378          0.057 -65.611273  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>

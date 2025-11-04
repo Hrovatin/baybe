@@ -141,7 +141,7 @@ print(recommendation)
 
     Recommendation from campaign:
         Granularity  Pressure[bar]  Temperature[degree_C]    Solvent
-    141        fine            1.0             155.555556  Solvent B
+    153        fine            1.0             188.888889  Solvent B
 
 
 
