@@ -1121,11 +1121,10 @@
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="baybe-a-bayesian-back-end-for-design-of-experiments">
 <h1>BayBE — A Bayesian Back End for Design of Experiments<a class="headerlink" href="#baybe-a-bayesian-back-end-for-design-of-experiments" title="Link to this heading">¶</a></h1>
-<p>The <strong>Bay</strong>esian <strong>B</strong>ack <strong>E</strong>nd (<strong>BayBE</strong>)
-helps to find a <strong>good parameter settings</strong></p>
-<p>within a complex parameter search space.</p>
+<p>The <strong>Bay</strong>esian <strong>B</strong>ack <strong>E</strong>nd (<strong>BayBE</strong>) helps to find <strong>good parameter settings</strong>
+within a complex parameter search space.</p>
 <div align="center">
-<p><a class="reference external" href="https://github.com/Hrovatin/baybe/"><img alt="Complex Search Space" src="https://raw.githubusercontent.com/hrovatin/baybe/docs/easy_access/docs/_static/complex_search_space_automatic.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/emdgroup/baybe/"><img alt="Complex Search Space" src="https://raw.githubusercontent.com/Hrovatin/baybe/docs/easy_access/docs/_static/complex_search_space_automatic.svg" /></a></p>
 </div>
 <p>Example use-cases:</p>
 <ul class="simple">
@@ -1164,7 +1163,7 @@ The following provides a non-comprehensive overview:</p>
 <li><p>⚖️ Different optimization strategies can be selected to balance exploration and exploitation of the search space, including bandit models and active learning.</p></li>
 </ul>
 </li>
-<li><p>🌎 Run campaigns <strong>asynchronously</strong> with pending experiments and partial measurements via distributed workflows.</p></li>
+<li><p>🌎 Run campaigns <strong>asynchronously</strong> with pending experiments and partial measurements.</p></li>
 <li><p>🔍 <strong>Insights</strong>: Easily analyze feature importance and model behavior.</p></li>
 <li><p>📈 Utilities for <strong>benchmarking</strong>, such as backtesting and simulations.</p></li>
 <li><p>📝 <strong>High-quality code base</strong> with comprehensive tests and typing.</p></li>
@@ -1179,7 +1178,7 @@ Based on this information and any <strong>available data</strong> about outcomes
 BayBE will <strong>recommend the next set of parameter combinations</strong> to be <strong>measured</strong>.
 To inform the next recommendation cycle, the newly generated measurements can be added to BayBE.</p>
 <div align="center">
-<p><a class="reference external" href="https://github.com/Hrovatin/baybe/"><img alt="Quick Start" src="https://raw.githubusercontent.com/hrovatin/baybe/docs/easy_access/docs/_static/quick_start_automatic.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/emdgroup/baybe/"><img alt="Quick Start" src="https://raw.githubusercontent.com/Hrovatin/baybe/docs/easy_access/docs/_static/quick_start_automatic.svg" /></a></p>
 </div>
 <p>From the user perspective, the most important part is the “design” step.
 If you are new to BayBE, we suggest consulting our
@@ -1217,9 +1216,9 @@ of the user guide.</p>
 <section id="defining-the-search-space">
 <h3>Defining the Search Space<a class="headerlink" href="#defining-the-search-space" title="Link to this heading">¶</a></h3>
 <p>Next, we inform BayBE about the available “control knobs”, that is, the underlying
-reaction <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> we can tune (e.g., granularity,
-pressure and solvent) to optimize the yield. We also need to specify
-which values individual parameters can take.</p>
+reaction parameters we can tune to optimize the yield.
+In this case we tune granularity, pressure and solvent, each being encoded as a <code class="docutils literal notranslate"><span class="pre">Parameter</span></code>.
+We also need to specify which values individual parameters can take.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">baybe.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">CategoricalParameter</span><span class="p">,</span>
     <span class="n">NumericalDiscreteParameter</span><span class="p">,</span>
@@ -1346,7 +1345,7 @@ Each line shows the best target value that was cumulatively achieved after a giv
 <p>Different lines show outcomes of <code class="docutils literal notranslate"><span class="pre">Campaigns</span></code> with different designs.</p>
 <p><img alt="Substance Encoding Example" class="only-light align-center" src="_images/full_lookup_light.svg" /></p>
 <p><img alt="Substance Encoding Example" class="only-dark align-center" src="_images/full_lookup_dark.svg" /></p>
-<p>In particular, the five <code class="docutils literal notranslate"><span class="pre">Campaigns</span></code> differ in how the chemical <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> were encoded.
+<p>In particular, the five <code class="docutils literal notranslate"><span class="pre">Campaigns</span></code> differ in how molecules are encoded within each chemical <code class="docutils literal notranslate"><span class="pre">Parameter</span></code>.
 We can see that optimization is more efficient when
 using chemical encodings (e.g., <em>MORDRED</em>) rather than encoding categories with <em>one-hot</em> encoding or <em>random</em> features.</p>
 </section>
