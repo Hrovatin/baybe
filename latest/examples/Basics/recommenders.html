@@ -1300,14 +1300,14 @@ as follows.</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments: 
            Solvent                Base                        Ligand  \
-62     Butyl Ester   Potassium acetate                 (t-Bu)PhCPhos   
-276           DMAc   Potassium acetate                 (t-Bu)PhCPhos   
-209  Butyornitrile  Potassium pivalate  Di-tert-butylphenylphosphine   
+204  Butyornitrile  Potassium pivalate                     BrettPhos   
+170  Butyornitrile   Potassium acetate                 (t-Bu)PhCPhos   
+376       p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
 
      Temperature  Concentration  
-62         120.0          0.153  
-276        120.0          0.057  
-209         90.0          0.153  
+204        120.0          0.057  
+170        120.0          0.153  
+376        120.0          0.100  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
@@ -1317,14 +1317,14 @@ as follows.</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
            Solvent                Base                        Ligand  \
-62     Butyl Ester   Potassium acetate                 (t-Bu)PhCPhos   
-276           DMAc   Potassium acetate                 (t-Bu)PhCPhos   
-209  Butyornitrile  Potassium pivalate  Di-tert-butylphenylphosphine   
+204  Butyornitrile  Potassium pivalate                     BrettPhos   
+170  Butyornitrile   Potassium acetate                 (t-Bu)PhCPhos   
+376       p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
 
      Temperature  Concentration      yield  
-62         120.0          0.153  99.110035  
-276        120.0          0.057 -68.318835  
-209         90.0          0.153   1.916212  
+204        120.0          0.057 -82.991079  
+170        120.0          0.153  -3.878935  
+376        120.0          0.100   0.310887  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
