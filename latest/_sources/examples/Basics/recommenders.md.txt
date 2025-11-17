@@ -246,15 +246,15 @@ print(recommendation)
     
     
     Recommended experiments: 
-             Solvent                Base                        Ligand  \
-    88   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-    89   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-    373     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
+          Solvent             Base                        Ligand  Temperature  \
+    365  p-Xylene  Cesium pivalate                     BrettPhos        105.0   
+    342  p-Xylene   Cesium acetate  Di-tert-butylphenylphosphine         90.0   
+    377  p-Xylene  Cesium pivalate  Di-tert-butylphenylphosphine        120.0   
     
-         Temperature  Concentration  
-    88         120.0          0.100  
-    89         120.0          0.153  
-    373        105.0          0.100  
+         Concentration  
+    365          0.153  
+    342          0.057  
+    377          0.153  
 
 
 
@@ -267,15 +267,15 @@ print(recommendation)
     
     
     Recommended experiments with fake measured values: 
-             Solvent                Base                        Ligand  \
-    88   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-    89   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-    373     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
+          Solvent             Base                        Ligand  Temperature  \
+    365  p-Xylene  Cesium pivalate                     BrettPhos        105.0   
+    342  p-Xylene   Cesium acetate  Di-tert-butylphenylphosphine         90.0   
+    377  p-Xylene  Cesium pivalate  Di-tert-butylphenylphosphine        120.0   
     
-         Temperature  Concentration      yield  
-    88         120.0          0.100 -52.927544  
-    89         120.0          0.153 -87.857420  
-    373        105.0          0.100 -95.868367  
+         Concentration      yield  
+    365          0.153  98.441407  
+    342          0.057  92.192195  
+    377          0.153 -45.908656  
 
 
 

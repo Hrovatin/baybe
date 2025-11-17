@@ -218,6 +218,11 @@
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
+<div class="announcement">
+    <aside class="announcement-content">
+        You are not viewing the documentation of the <a href="https://emdgroup.github.io/baybe/stable">stable</a> version.
+    </aside>
+</div>
 
 
 <div class="page">
@@ -265,8 +270,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference external" href="https://emdgroup.github.io/baybe/versions">Versions</a></li>
-</ul>
+<li class="toctree-l1"><a class=reference external href="https://emdgroup.github.io/baybe/versions">Version: latest</a></li></ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Readme</a></li>
@@ -1022,6 +1026,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../../_autosummary/baybe.utils.torch.html">baybe.utils.torch</a><input class="toctree-checkbox" id="toctree-checkbox-134" name="toctree-checkbox-134" role="switch" type="checkbox"/><label for="toctree-checkbox-134"><div class="visually-hidden">Toggle navigation of baybe.utils.torch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../_autosummary/baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION.html">baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../_autosummary/baybe.utils.torch.DTypeFloatTorch.html">baybe.utils.torch.DTypeFloatTorch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../_autosummary/baybe.utils.torch.torch_to_numpy_dtype_mapping.html">baybe.utils.torch.torch_to_numpy_dtype_mapping</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../../../_autosummary/baybe.utils.validation.html">baybe.utils.validation</a><input class="toctree-checkbox" id="toctree-checkbox-135" name="toctree-checkbox-135" role="switch" type="checkbox"/><label for="toctree-checkbox-135"><div class="visually-hidden">Toggle navigation of baybe.utils.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1305,13 +1310,33 @@
             <span class="n">searchspace</span><span class="p">,</span> <span class="n">objective</span><span class="p">,</span> <span class="n">measurements</span><span class="p">,</span> <span class="n">pending_experiments</span>
         <span class="p">)</span>
 
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span>
-            <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
-            <span class="n">searchspace</span><span class="o">=</span><span class="n">searchspace</span><span class="p">,</span>
-            <span class="n">objective</span><span class="o">=</span><span class="n">objective</span><span class="p">,</span>
-            <span class="n">measurements</span><span class="o">=</span><span class="n">measurements</span><span class="p">,</span>
-            <span class="n">pending_experiments</span><span class="o">=</span><span class="n">pending_experiments</span><span class="p">,</span>
-        <span class="p">)</span></div>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recommend</span><span class="p">(</span>
+                <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                <span class="n">searchspace</span><span class="o">=</span><span class="n">searchspace</span><span class="p">,</span>
+                <span class="n">objective</span><span class="o">=</span><span class="n">objective</span><span class="p">,</span>
+                <span class="n">measurements</span><span class="o">=</span><span class="n">measurements</span><span class="p">,</span>
+                <span class="n">pending_experiments</span><span class="o">=</span><span class="n">pending_experiments</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="c1"># Search spaces with continuous components are incompatible with surrogates</span>
+            <span class="c1"># that do not support gradient computation</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="s2">&quot;does not have a grad_fn&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="n">searchspace</span><span class="o">.</span><span class="n">continuous</span><span class="o">.</span><span class="n">is_empty</span>
+            <span class="p">):</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">baybe.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncompatibleSurrogateError</span>
+                <span class="kn">from</span><span class="w"> </span><span class="nn">baybe.surrogates</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianProcessSurrogate</span>
+
+                <span class="k">raise</span> <span class="n">IncompatibleSurrogateError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The search space contains continuous parameters, but the applied &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;surrogate of type &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_surrogate_model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;does not support the required gradient computation. Choose a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;surrogate that supports gradients, e.g. the &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">GaussianProcessSurrogate</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ex</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span></div>
 
 
 <div class="viewcode-block" id="BayesianRecommender.acquisition_values">

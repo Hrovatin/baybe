@@ -219,6 +219,11 @@
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
+<div class="announcement">
+    <aside class="announcement-content">
+        You are not viewing the documentation of the <a href="https://emdgroup.github.io/baybe/stable">stable</a> version.
+    </aside>
+</div>
 
 
 <div class="page">
@@ -266,8 +271,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference external" href="https://emdgroup.github.io/baybe/versions">Versions</a></li>
-</ul>
+<li class="toctree-l1"><a class=reference external href="https://emdgroup.github.io/baybe/versions">Version: latest</a></li></ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Readme</a></li>
@@ -1023,6 +1027,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.html">baybe.utils.torch</a><input class="toctree-checkbox" id="toctree-checkbox-134" name="toctree-checkbox-134" role="switch" type="checkbox"/><label for="toctree-checkbox-134"><div class="visually-hidden">Toggle navigation of baybe.utils.torch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION.html">baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.DTypeFloatTorch.html">baybe.utils.torch.DTypeFloatTorch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.torch_to_numpy_dtype_mapping.html">baybe.utils.torch.torch_to_numpy_dtype_mapping</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.html">baybe.utils.validation</a><input class="toctree-checkbox" id="toctree-checkbox-135" name="toctree-checkbox-135" role="switch" type="checkbox"/><label for="toctree-checkbox-135"><div class="visually-hidden">Toggle navigation of baybe.utils.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1127,16 +1132,16 @@ Let us draw some samples from it and verify that they are within the bounds:</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        x_1       x_2       x_3       x_4
-0  0.979267 -0.112588  0.244742  0.362889
-1 -0.581391 -0.049140 -0.452587 -0.144014
-2 -0.174988  0.710199 -0.432192 -0.834531
-3  0.716657  0.332507  0.314992 -0.020023
-4  0.896882  0.041063 -0.865980 -0.633583
-5 -0.047757 -0.592817 -0.298001 -0.940508
-6 -0.760299 -0.415826  0.175514 -0.670360
-7 -0.013074  0.659343 -0.219620  0.138110
-8  0.021626 -0.748204  0.195519  0.475504
-9 -0.009967  0.130342 -0.571703  0.213734
+0  0.043211 -0.281743  0.268271 -0.329887
+1  0.178013 -0.105424  0.281882  0.460033
+2  0.144989  0.906992 -0.694774  0.320961
+3  0.014444  0.757000 -0.372218  0.640344
+4  0.400343 -0.166858  0.653549  0.618042
+5  0.902613 -0.714769 -0.033266 -0.376468
+6 -0.456302  0.989842 -0.992740 -0.157895
+7  0.356807  0.223880 -0.334809 -0.076882
+8 -0.726712 -0.544998  0.579682  0.838168
+9 -0.348134 -0.554077 -0.346073 -0.733283
 </pre></div>
 </div>
 <p>There are several ways we can turn the above objects into a search space.

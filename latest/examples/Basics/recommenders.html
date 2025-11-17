@@ -219,6 +219,11 @@
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
+<div class="announcement">
+    <aside class="announcement-content">
+        You are not viewing the documentation of the <a href="https://emdgroup.github.io/baybe/stable">stable</a> version.
+    </aside>
+</div>
 
 
 <div class="page">
@@ -266,8 +271,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference external" href="https://emdgroup.github.io/baybe/versions">Versions</a></li>
-</ul>
+<li class="toctree-l1"><a class=reference external href="https://emdgroup.github.io/baybe/versions">Version: latest</a></li></ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Readme</a></li>
@@ -1023,6 +1027,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.html">baybe.utils.torch</a><input class="toctree-checkbox" id="toctree-checkbox-134" name="toctree-checkbox-134" role="switch" type="checkbox"/><label for="toctree-checkbox-134"><div class="visually-hidden">Toggle navigation of baybe.utils.torch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION.html">baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.DTypeFloatTorch.html">baybe.utils.torch.DTypeFloatTorch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.torch_to_numpy_dtype_mapping.html">baybe.utils.torch.torch_to_numpy_dtype_mapping</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.html">baybe.utils.validation</a><input class="toctree-checkbox" id="toctree-checkbox-135" name="toctree-checkbox-135" role="switch" type="checkbox"/><label for="toctree-checkbox-135"><div class="visually-hidden">Toggle navigation of baybe.utils.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1299,15 +1304,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments: 
-         Solvent                Base                        Ligand  \
-88   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-89   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-373     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
+      Solvent             Base                        Ligand  Temperature  \
+365  p-Xylene  Cesium pivalate                     BrettPhos        105.0   
+342  p-Xylene   Cesium acetate  Di-tert-butylphenylphosphine         90.0   
+377  p-Xylene  Cesium pivalate  Di-tert-butylphenylphosphine        120.0   
 
-     Temperature  Concentration  
-88         120.0          0.100  
-89         120.0          0.153  
-373        105.0          0.100  
+     Concentration  
+365          0.153  
+342          0.057  
+377          0.153  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
@@ -1316,15 +1321,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
-         Solvent                Base                        Ligand  \
-88   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-89   Butyl Ester  Potassium pivalate                 (t-Bu)PhCPhos   
-373     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
+      Solvent             Base                        Ligand  Temperature  \
+365  p-Xylene  Cesium pivalate                     BrettPhos        105.0   
+342  p-Xylene   Cesium acetate  Di-tert-butylphenylphosphine         90.0   
+377  p-Xylene  Cesium pivalate  Di-tert-butylphenylphosphine        120.0   
 
-     Temperature  Concentration      yield  
-88         120.0          0.100 -52.927544  
-89         120.0          0.153 -87.857420  
-373        105.0          0.100 -95.868367  
+     Concentration      yield  
+365          0.153  98.441407  
+342          0.057  92.192195  
+377          0.153 -45.908656  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
