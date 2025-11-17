@@ -25,6 +25,14 @@
 &nbsp;
 </div>
 
+<details>
+
+<summary>Test dropdown title</summary>
+
+- 🎭 Test dropdown body
+
+</details>
+
 # BayBE — A Bayesian Back End for Design of Experiments
 
 The **Bay**esian **B**ack **E**nd (**BayBE**) is a general-purpose toolbox for Bayesian Design
@@ -360,3 +368,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
