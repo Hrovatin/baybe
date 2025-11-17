@@ -1027,7 +1027,6 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.html">baybe.utils.torch</a><input class="toctree-checkbox" id="toctree-checkbox-134" name="toctree-checkbox-134" role="switch" type="checkbox"/><label for="toctree-checkbox-134"><div class="visually-hidden">Toggle navigation of baybe.utils.torch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION.html">baybe.utils.torch.VARNAME_TORCH_USE_SINGLE_PRECISION</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.DTypeFloatTorch.html">baybe.utils.torch.DTypeFloatTorch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/baybe.utils.torch.torch_to_numpy_dtype_mapping.html">baybe.utils.torch.torch_to_numpy_dtype_mapping</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/baybe.utils.validation.html">baybe.utils.validation</a><input class="toctree-checkbox" id="toctree-checkbox-135" name="toctree-checkbox-135" role="switch" type="checkbox"/><label for="toctree-checkbox-135"><div class="visually-hidden">Toggle navigation of baybe.utils.validation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1203,16 +1202,16 @@ random points from the search space:</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       Base1      Base2  PhaseAgent1  PhaseAgent2   Solvent1   Solvent2
-0  18.716998  14.082243     1.720751     1.959604   8.707067  54.813337
-1  10.200992   6.174242     1.042200     2.748579   8.519385  71.314602
-2   1.986892  16.945594     0.871572     1.052838  43.509865  35.633240
-3  10.201697   4.665034     1.818233     0.207675  12.191048  70.916313
-4  12.854288  13.490840     0.918106     2.495066  68.057576   2.184124
-5  17.611073  19.142898     2.740386     1.718188   5.565497  53.221957
-6   4.639896  12.031365     0.198059     1.788993  27.983077  53.358609
-7  11.051799  15.033770     2.527507     0.492121  27.878545  43.016259
-8   0.724333  15.958914     1.561640     2.879233   1.558131  77.317749
-9  17.639099   8.179110     2.340408     2.217896   4.066703  65.556785
+0   8.427485  14.749852     0.660665     3.742089   3.260250  69.159659
+1   0.260049  13.470971     3.493746     0.419321  21.155327  61.200585
+2   9.009212  12.108090     3.537532     0.003561  63.136525  12.205079
+3  18.854895   7.300530     0.417059     1.078320  44.262775  28.086422
+4   5.415942   8.013666     1.402151     0.010771  10.549339  74.608131
+5   5.667570  18.195294     3.184358     1.669678  18.537027  52.746073
+6   8.730148   2.165220     0.394501     2.497739   8.887586  77.324805
+7   6.868657   8.194935     3.668847     0.734031  58.477132  22.056398
+8   8.892103  10.636046     1.446552     1.630449   4.941103  72.453746
+9  15.849839  12.671495     2.714618     1.792908   6.749552  60.221588
 </pre></div>
 </div>
 <p>Computing the respective row sums reveals the expected result:</p>
@@ -1227,16 +1226,16 @@ random points from the search space:</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   Total  Total_Bases  Total_Phase_Agents
-0  100.0    32.799241            3.680355
-1  100.0    16.375234            3.790779
-2  100.0    18.932485            1.924410
-3  100.0    14.866731            2.025908
-4  100.0    26.345128            3.413172
-5  100.0    36.753972            4.458574
-6  100.0    16.671261            1.987053
-7  100.0    26.085568            3.019628
-8  100.0    16.683247            4.440874
-9  100.0    25.818209            4.558304
+0  100.0    23.177337            4.402754
+1  100.0    13.731020            3.913067
+2  100.0    21.117302            3.541094
+3  100.0    26.155424            1.495379
+4  100.0    13.429609            1.412921
+5  100.0    23.862864            4.854036
+6  100.0    10.895368            2.892240
+7  100.0    15.063592            4.402878
+8  100.0    19.528149            3.077001
+9  100.0    28.521334            4.507526
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
