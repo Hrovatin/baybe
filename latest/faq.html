@@ -242,7 +242,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -1086,7 +1086,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -1119,99 +1119,7 @@ your campaign, depending on your settings for the
 <a class="reference internal" href="_autosummary/baybe.campaign.Campaign.html#baybe.campaign.Campaign.allow_recommending_already_measured" title="baybe.campaign.Campaign.allow_recommending_already_measured"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_recommending_already_measured</span></code></a> and
 <a class="reference internal" href="_autosummary/baybe.campaign.Campaign.html#baybe.campaign.Campaign.allow_recommending_already_recommended" title="baybe.campaign.Campaign.allow_recommending_already_recommended"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_recommending_already_recommended</span></code></a> flags.</p>
 </div>
-</details><section id="checklist-for-designing-baybe-optimization-campaigns">
-<h2>Checklist for Designing BayBE Optimization Campaigns<a class="headerlink" href="#checklist-for-designing-baybe-optimization-campaigns" title="Link to this heading">¶</a></h2>
-<p>This checklist collects <strong>common questions that you need to ask yourself</strong> when designing a BayBE optimization campaign. It also provides documentation references that will help you with the corresponding setup.</p>
-<p>Note that this is not a comprehensive guide of all BayBE’s functionalities, but rather a “quick start” meant to help you with the most basic design principles.</p>
-<section id="defining-targets">
-<h3>Defining Targets<a class="headerlink" href="#defining-targets" title="Link to this heading">¶</a></h3>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Should the target value be maximized, minimized, or be matched to a specific value?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Specify this when
-<a class="reference internal" href="#userguide/targets.html#numericaltarget"><span class="xref myst">defining the target</span></a>.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Should multiple target be optimized simultaneously?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">See how to use
-<a class="reference internal" href="#userguide/objectives.html"><span class="xref myst">multi-target objectives</span></a>.</p>
-</div>
 </details></section>
-<section id="defining-parameter-search-space">
-<h3>Defining Parameter Search Space<a class="headerlink" href="#defining-parameter-search-space" title="Link to this heading">¶</a></h3>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Are only some parameter values of interest/possible?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">See how to exclude some
-<a class="reference internal" href="#userguide/getting_recommendations.html#excluding-configurations"><span class="xref myst">parameter values</span></a>
-from being recommended, such as by defining
-<a class="reference internal" href="#userguide/parameters.html#numericalcontinuousparameter"><span class="xref myst">bounds for continuous parameters</span></a>
-or <a class="reference internal" href="#userguide/parameters.html#discrete-parameters"><span class="xref myst">active values for discrete parameters</span></a>.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Are only some parameter combinations of interest/possible?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">See how to exclude some
-parameter combinations from being considered by using
-<a class="reference internal" href="#userguide/constraints.html"><span class="xref myst">constraints</span></a> or
-<a class="reference internal" href="#userguide/searchspace.html#creating-a-simplex-bound-discrete-subspace"><span class="xref myst">constrained searchspaces</span></a>.
-Alternatively, if the aim is to use only a few specific parameter configurations the search space can be created from a
-<a class="reference internal" href="#userguide/searchspace.html#id3"><span class="xref myst">dataframe</span></a>
-rather than from the product of all possible parameter combinations.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Are some parameters non-numeric or allow only discrete numbers?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Use <a class="reference internal" href="#userguide/parameters.html#discrete-parameters"><span class="xref myst">discrete</span></a>
-rather than <a class="reference internal" href="#userguide/parameters.html#continuous-parameters"><span class="xref myst">continuous</span></a> parameters.</p>
-</div></blockquote>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Is it possible to encode discrete parameters based on domain knowledge to capture relationships between categories (e.g., ordered values, molecular fingerprints, model embeddings)?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">See how to
-<a class="reference internal" href="#userguide/parameters.html#discrete-parameters"><span class="xref myst">encode</span></a>
-discrete parameters or provide custom encodings.</p>
-</div>
-</details></section>
-<section id="account-for-specifics-of-data-availability-or-data-acquisition-procedure">
-<h3>Account for Specifics of Data Availability or Data Acquisition Procedure<a class="headerlink" href="#account-for-specifics-of-data-availability-or-data-acquisition-procedure" title="Link to this heading">¶</a></h3>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Is no prior data available and the experiments should be done in batches?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Use <a class="reference internal" href="#userguide/recommenders.html#clustering-recommenders"><span class="xref myst">clustering</span></a> or <a class="reference internal" href="#userguide/recommenders.html#sampling-recommenders"><span class="xref myst">sampling</span></a> recommenders to diversify the first batch of parameter settings to be tested.</p>
-</div></blockquote>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Is additional data from historic or other partially-related experiments available?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Use <a class="reference internal" href="#userguide/transfer_learning.html"><span class="xref myst">transfer learning</span></a>.</p>
-</div></blockquote>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Will the outcome measurements of different parameter setting become available at different times?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Use <a class="reference internal" href="#userguide/async.html"><span class="xref myst">asynchronous workflows</span></a>.</p>
-</div></blockquote>
-</div>
-</details></section>
-<section id="advanced-adjust-how-recommendations-are-prioritized">
-<h3>Advanced: Adjust how Recommendations are Prioritized<a class="headerlink" href="#advanced-adjust-how-recommendations-are-prioritized" title="Link to this heading">¶</a></h3>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Is the aim to reduce the overall uncertainty across different regions of the search space rather than optimize a specific objective?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Use <a class="reference internal" href="#userguide/active_learning.html"><span class="xref myst">active learning</span></a>.</p>
-</div></blockquote>
-</div>
-</details></section>
-</section>
-</section>
 
         </article>
       </div>
@@ -1256,33 +1164,8 @@ discrete parameters or provide custom encodings.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">FAQ</a><ul>
-<li><a class="reference internal" href="#checklist-for-designing-baybe-optimization-campaigns">Checklist for Designing BayBE Optimization Campaigns</a><ul>
-<li><a class="reference internal" href="#defining-targets">Defining Targets</a></li>
-<li><a class="reference internal" href="#defining-parameter-search-space">Defining Parameter Search Space</a></li>
-<li><a class="reference internal" href="#account-for-specifics-of-data-availability-or-data-acquisition-procedure">Account for Specifics of Data Availability or Data Acquisition Procedure</a></li>
-<li><a class="reference internal" href="#advanced-adjust-how-recommendations-are-prioritized">Advanced: Adjust how Recommendations are Prioritized</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
