@@ -1148,36 +1148,107 @@ and exploration of unknown regions.</p>
 focusing on making this procedure easily accessible for real-world experiments.</p>
 <section id="batteries-included">
 <h2>🔋 Batteries Included<a class="headerlink" href="#batteries-included" title="Link to this heading">¶</a></h2>
-<p>BayBE offers a range of ✨<strong>built‑in features</strong>✨ crucial for real-world use cases.
-The following provides a non-comprehensive overview:</p>
+<p>BayBE offers a range of ✨<strong>built‑in features</strong>✨, including:</p>
+<p>📚 Mechanisms for leveraging <strong>additional information</strong>:</p>
 <ul class="simple">
-<li><p>📚 Leverage <strong>domain knowledge</strong>:</p>
+<li><p>Capture <strong>relationships between categories</strong> by
+<a class="reference external" href="https:/emdgroup.github.io/baybe/stable/userguide/parameters.html#customdiscreteparameter">encoding categorical data</a>.
+BayBE also provides built-in chemical encodings.</p></li>
+<li><p><strong>Build in mechanistic</strong> process understanding via
+<a class="reference external" href="https://emdgroup.github.io/baybe/stable/examples/Custom_Surrogates/Custom_Surrogates.html">custom surrogate models</a>.</p></li>
+<li><p>Leverage <strong>additional data</strong> from similar campaigns to accelerate optimization via
+<a class="reference external" href="https://emdgroup.github.io/baybe/stable/examples/Transfer_Learning/basic_transfer_learning.html">transfer learning</a>.</p></li>
+</ul>
+<p>🛠️ <strong>Flexible</strong> modeling options:</p>
+<ul class="simple">
+<li><p>Choose between different <strong>target types</strong>, including numerical targets (e.g., experimental outcome values) or binary targets (e.g., good/bad classification of experimental results). Targets can be minimized, maximized or matched to a specific value.</p></li>
+<li><p>Optimize <strong>multiple targets</strong> at once (e.g., via Pareto optimization or desirability scalarization).</p></li>
+<li><p>Use both continuous and discrete parameters within a single <strong>mixed search space</strong>.</p></li>
+<li><p>Define a <strong>maximal number of mixture components</strong> via cardinality constraints.</p></li>
+<li><p>Choose between different optimization strategies to <strong>balance exploration and exploitation</strong> of the search space:</p>
 <ul>
-<li><p>🎨 Capture relationships between categories by encoding categorical data. BayBE also provides built-in chemical encodings.</p></li>
-<li><p>🛠️ Build in mechanistic process understanding via custom surrogate models.</p></li>
+<li><p>Gain the <strong>understanding of the whole search space</strong> via active learning.</p></li>
+<li><p>Maximize <strong>total gain across a sequence of actions</strong> via bandit models.</p></li>
 </ul>
 </li>
-<li><p>🏛️ Leverage <strong>historic data</strong> from similar campaigns to accelerate optimization via transfer learning.</p></li>
-<li><p>🌀 <strong>Flexibly</strong> define target outcomes, parameter search spaces and optimization strategies:</p>
+</ul>
+<p>🔗 <strong>Advanced</strong> optimization workflows:</p>
+<ul class="simple">
+<li><p>Run campaigns <strong>asynchronously</strong> with pending experiments and partial measurements.</p></li>
+<li><p>Connect BayBE with <strong>database storage and API wrappers</strong> using the serialization functionality.</p></li>
+</ul>
+<p>🔍 Performance <strong>evaluation</strong> tools:</p>
+<ul class="simple">
+<li><p>Gain <strong>insights</strong> about the optimization campaigns by analyzing feature importance and model behavior.</p></li>
+<li><p>Conduct <strong>benchmarks</strong> to select between different Bayesian optimization settings via backtesting.</p></li>
+</ul>
+<p><br><br><br>
+Dropdown format (short example):
+<br><br><br></p>
+<details>
+<summary>🔗 <b>Advanced</b> optimization workflows:</summary>
 <ul>
-<li><p>🎯 Choose between numerical targets (e.g., experimental outcome values) or binary targets (e.g., good/bad classification of experimental results). Targets can be minimized, maximized or matched to a specific value.</p></li>
-<li><p>👥👥 Optimized multiple targets at once (e.g., via Pareto optimization or desirability scalarization).</p></li>
-<li><p>🎭 Use both continuous and discrete parameters can within a single search space.</p></li>
-<li><p>🔢 Define a maximal number of mixture components via cardinality constraints.</p></li>
-<li><p>⚖️ Choose between different optimization strategies to balance exploration and exploitation of the search space:</p>
+<li>Run campaigns <b>asynchronously</b> with pending experiments and partial measurements.</li>
+<li>Connect BayBE with <b>database storage and API wrappers</b> using the serialization functionality.</li>
+</ul>
+</details>
+<details>
+<summary>🔍 Performance <b>evaluation</b> tools:</summary>
 <ul>
-<li><p>🌍 Gain the understanding of the whole search space via active learning.</p></li>
-<li><p>🎰 Maximize total gain across a sequence of actions via bandit models.</p></li>
+<li>Gain <b>insights</b> about the optimization campaigns by analyzing feature importance and model behavior.</li>
+<li>Conduct <b>benchmarks</b> to select between different Bayesian optimization settings via backtesting.</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>🌐 Run campaigns <strong>asynchronously</strong> with pending experiments and partial measurements.</p></li>
-<li><p>🔍 Gain <strong>insights</strong> about the optimization campaigns by analyzing feature importance and model behavior.</p></li>
-<li><p>📈 Conduct <strong>benchmarks</strong> to select between different Bayesian optimization settings via backtesting.</p></li>
-<li><p>🔄 Connect BayBE with <strong>database storage and API wrappers</strong> using the serialization functionality.</p></li>
-<li><p>📝 Rely on <strong>high-quality code base</strong> with comprehensive tests and typing.</p></li>
-</ul>
+</details>
+<p><br><br><br>
+Box format (short example):
+<br><br><br></p>
+<div style="border:2px solid #535353; border-radius: 7px; margin: 5px;">
+  <div style="background-color: #535353; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
+    🔗 <b>Advanced</b> Optimization Workflows
+  </div>
+  <div style="padding: 10px;">
+    <ul>
+      <li>Run campaigns <b>asynchronously</b> with pending experiments and partial measurements.</li>
+      <li>Connect BayBE with <b>database storage and API wrappers</b> using the serialization functionality.</li>
+    </ul>
+  </div>
+</div>
+<div style="border:2px solid #535353; border-radius: 7px; margin: 5px;">
+  <div style="background-color: #535353; color: white; padding: 10px; border-radius: 5px;  cursor: pointer;">
+    🔍 Performance <b>Evaluation</b> Tools
+  </div>
+  <div style="padding: 10px;">
+    <ul>
+      <li>Gain <b>insights</b> about the optimization campaigns by analyzing feature importance and model behavior.</li>
+      <li>Conduct <b>benchmarks</b> to select between different Bayesian optimization settings via backtesting.</li>
+    </ul>
+  </div>
+</div>
+<p><br><br><br>
+Box dropdown format (short example):
+<br><br><br></p>
+<details style="border:2px solid #535353; border-radius: 7px; margin: 5px;">
+  <summary style="background-color: #535353; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
+    🔗 <b>Advanced</b> Optimization Workflows
+  </summary>
+  <div style="padding: 10px;">
+    <ul>
+      <li>Run campaigns <b>asynchronously</b> with pending experiments and partial measurements.</li>
+      <li>Connect BayBE with <b>database storage and API wrappers</b> using the serialization functionality.</li>
+    </ul>
+  </div>
+</details>
+<details style="border:2px solid #535353; border-radius: 7px; margin: 5px;">
+  <summary style="background-color: #535353; color: white; padding: 10px; border-radius: 5px;  cursor: pointer;">
+    🔍 Performance <b>Evaluation</b> Tools
+  </summary>
+  <div style="padding: 10px;">
+    <ul>
+      <li>Gain <b>insights</b> about the optimization campaigns by analyzing feature importance and model behavior.</li>
+      <li>Conduct <b>benchmarks</b> to select between different Bayesian optimization settings via backtesting.</li>
+    </ul>
+  </div>
+</details>
 </section>
 <section id="quick-start">
 <h2>⚡ Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
@@ -1348,8 +1419,7 @@ by tuning the solvent, base and ligand
 (from <a class="reference external" href="https://doi.org/10.1038/s41586-021-03213-y">Shields, B.J. et al.</a>).
 Each line shows the best target value that was cumulatively achieved after a given number of experimental iterations.</p>
 <p>Different lines show outcomes of <code class="docutils literal notranslate"><span class="pre">Campaigns</span></code> with different designs.</p>
-<p><img alt="Substance Encoding Example" class="only-light align-center" src="_images/full_lookup_light.svg" /></p>
-<p><img alt="Substance Encoding Example" class="only-dark align-center" src="_images/full_lookup_dark.svg" /></p>
+<p><img alt="Substance Encoding Example" src="_images/full_lookup_automatic.svg" /></p>
 <p>In particular, the five <code class="docutils literal notranslate"><span class="pre">Campaigns</span></code> differ in how molecules are encoded within each chemical <code class="docutils literal notranslate"><span class="pre">Parameter</span></code>.
 We can see that optimization is more efficient when
 using chemical encodings (e.g., <em>MORDRED</em>) rather than encoding categories with <em>one-hot</em> encoding or <em>random</em> features.</p>
@@ -1473,12 +1543,6 @@ distributed under the License is distributed on an “AS IS” BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</p>
-<details>
-<summary>Test dropdown title</summary>
-<ul class="simple">
-<li><p>🎭 Test dropdown body</p></li>
-</ul>
-</details>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>

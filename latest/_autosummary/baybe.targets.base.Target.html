@@ -1169,7 +1169,7 @@
 <dd><p>Create an object from its dictionary representation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.targets.base.Target.from_dict.params.dictionary"></span><strong>dictionary</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span>) – The dictionary representation.</p>
+<dd class="field-odd"><p><span class="target" id="baybe.targets.base.Target.from_dict.params.dictionary"></span><strong>dictionary</strong><a class="paramlink headerlink reference internal" href="#baybe.targets.base.Target.from_dict.params.dictionary">¶</a> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></span>) – The dictionary representation.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypeVar" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code></a>(<code class="docutils literal notranslate"><span class="pre">_T</span></code>, bound= SerialMixin)</span></p>
@@ -1186,7 +1186,7 @@
 <dd><p>Create an object from its JSON representation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.targets.base.Target.from_json.params.source"></span><strong>source</strong> (<span class="sphinx_autodoc_typehints-type">str | Path | SupportsRead[str]</span>) – <p>The JSON source. Can be:</p>
+<dd class="field-odd"><p><span class="target" id="baybe.targets.base.Target.from_json.params.source"></span><strong>source</strong><a class="paramlink headerlink reference internal" href="#baybe.targets.base.Target.from_json.params.source">¶</a> (<span class="sphinx_autodoc_typehints-type">str | Path | SupportsRead[str]</span>) – <p>The JSON source. Can be:</p>
 <ul class="simple">
 <li><p>A string containing JSON content.</p></li>
 <li><p>A file path or <code class="docutils literal notranslate"><span class="pre">Path</span></code> object pointing to a JSON file.</p></li>
@@ -1238,7 +1238,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="baybe.targets.base.Target.to_json.params.sink"></span><strong>sink</strong> (<span class="sphinx_autodoc_typehints-type">str | Path | SupportsWrite[str] | None</span>) – <p>The JSON sink. Can be:</p>
+<li><p><span class="target" id="baybe.targets.base.Target.to_json.params.sink"></span><strong>sink</strong><a class="paramlink headerlink reference internal" href="#baybe.targets.base.Target.to_json.params.sink">¶</a> (<span class="sphinx_autodoc_typehints-type">str | Path | SupportsWrite[str] | None</span>) – <p>The JSON sink. Can be:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> (only returns the JSON string).</p></li>
 <li><p>A file path or <code class="docutils literal notranslate"><span class="pre">Path</span></code> object pointing to a location where to write
@@ -1246,9 +1246,9 @@ the JSON content.</p></li>
 <li><p>A file-like object with a <code class="docutils literal notranslate"><span class="pre">write()</span></code> method.</p></li>
 </ul>
 </p></li>
-<li><p><span class="target" id="baybe.targets.base.Target.to_json.params.overwrite"></span><strong>overwrite</strong> (<span class="sphinx_autodoc_typehints-type">bool</span>) – Boolean flag indicating if to overwrite the file if it already
+<li><p><span class="target" id="baybe.targets.base.Target.to_json.params.overwrite"></span><strong>overwrite</strong><a class="paramlink headerlink reference internal" href="#baybe.targets.base.Target.to_json.params.overwrite">¶</a> (<span class="sphinx_autodoc_typehints-type">bool</span>) – Boolean flag indicating if to overwrite the file if it already
 exists. Only relevant if <code class="docutils literal notranslate"><span class="pre">sink</span></code> is a file path or <code class="docutils literal notranslate"><span class="pre">Path</span></code> object.</p></li>
-<li><p><span class="target" id="baybe.targets.base.Target.to_json.params.**kwargs"></span><strong>**kwargs</strong> (<span class="sphinx_autodoc_typehints-type">Any</span>) – Additional keyword arguments to pass to <a class="reference external" href="https://docs.python.org/3/library/json.html#json.dumps" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">json.dumps()</span></code></a>.</p></li>
+<li><p><span class="target" id="baybe.targets.base.Target.to_json.params.**kwargs"></span><strong>**kwargs</strong><a class="paramlink headerlink reference internal" href="#baybe.targets.base.Target.to_json.params.**kwargs">¶</a> (<span class="sphinx_autodoc_typehints-type">Any</span>) – Additional keyword arguments to pass to <a class="reference external" href="https://docs.python.org/3/library/json.html#json.dumps" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">json.dumps()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
@@ -1281,7 +1281,7 @@ exists. Only relevant if <code class="docutils literal notranslate"><span class=
 <dd><p>Transform target measurements to computational representation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.targets.base.Target.transform.params.series"></span><strong>series</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.3.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></span>) – The target measurements in experimental representation to be
+<dd class="field-odd"><p><span class="target" id="baybe.targets.base.Target.transform.params.series"></span><strong>series</strong><a class="paramlink headerlink reference internal" href="#baybe.targets.base.Target.transform.params.series">¶</a> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v2.3.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></span>) – The target measurements in experimental representation to be
 transformed.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>

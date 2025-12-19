@@ -1,4 +1,4 @@
-﻿baybe.utils.validation.finite\_float
+baybe.utils.validation.finite\_float
 ====================================
 
 .. currentmodule:: baybe.utils.validation

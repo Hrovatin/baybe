@@ -1101,27 +1101,27 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">baybe.utils.clustering_algorithms.third_party.kmedoids.</span></span><span class="sig-name descname"><span class="pre">KMedoids</span></span><a class="reference internal" href="../_modules/baybe/utils/clustering_algorithms/third_party/kmedoids.html#KMedoids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code></a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClusterMixin.html#sklearn.base.ClusterMixin" title="(in scikit-learn v1.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClusterMixin</span></code></a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code></a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClusterMixin.html#sklearn.base.ClusterMixin" title="(in scikit-learn v1.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClusterMixin</span></code></a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></a></p>
 <p>k-medoids clustering.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.n_clusters"></span><strong>n_clusters</strong> – int, optional, default: 8
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.n_clusters"></span><strong>n_clusters</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.n_clusters">¶</a> – int, optional, default: 8
 The number of clusters to form as well as the number of medoids to
 generate.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.metric"></span><strong>metric</strong> – string, or callable, optional, default: ‘euclidean’
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.metric"></span><strong>metric</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.metric">¶</a> – string, or callable, optional, default: ‘euclidean’
 What distance metric to use. See :func:metrics.pairwise_distances
 metric can be ‘precomputed’, the user must then feed the fit method
 with a precomputed kernel matrix and not the design matrix X.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.method"></span><strong>method</strong> – {‘alternate’, ‘pam’}, default: ‘alternate’
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.method"></span><strong>method</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.method">¶</a> – {‘alternate’, ‘pam’}, default: ‘alternate’
 Which algorithm to use. ‘alternate’ is faster while ‘pam’ is more accurate.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.init"></span><strong>init</strong> – {‘random’, ‘heuristic’, ‘k-medoids++’, ‘build’} or array-like, default: ‘heuristic’</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.max_iter"></span><strong>max_iter</strong> – int, optional, default : 300
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.init"></span><strong>init</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.init">¶</a> – {‘random’, ‘heuristic’, ‘k-medoids++’, ‘build’} or array-like, default: ‘heuristic’</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.max_iter"></span><strong>max_iter</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.max_iter">¶</a> – int, optional, default : 300
 Specify the maximum number of iterations when fitting. It can be zero in
 which case only the initialization is computed which may be suitable for
 large datasets when the initialization is sufficiently efficient
 (i.e. for ‘build’ init).</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.random_state"></span><strong>random_state</strong> – int, RandomState instance or None, optional
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.random_state"></span><strong>random_state</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.params.random_state">¶</a> – int, RandomState instance or None, optional
 Specify random state for the random number generator. Used to
 initialise medoids when init=’random’.</p></li>
 </ul>
@@ -1246,9 +1246,9 @@ the duration of fit, the space complexity is O(n_samples ** 2).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit.params.X"></span><strong>X</strong> – {array-like, sparse matrix}, shape = (n_samples, n_features),                     or (n_samples, n_samples) if metric == ‘precomputed’
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit.params.X"></span><strong>X</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit.params.X">¶</a> – {array-like, sparse matrix}, shape = (n_samples, n_features),                     or (n_samples, n_samples) if metric == ‘precomputed’
 Dataset to cluster.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit.params.y"></span><strong>y</strong> – Ignored</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit.params.y">¶</a> – Ignored</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1264,9 +1264,9 @@ Dataset to cluster.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.X"></span><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Input data.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.y"></span><strong>y</strong> (<em>Ignored</em>) – Not used, present for API consistency by convention.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.**kwargs"></span><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Arguments to be passed to <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.X"></span><strong>X</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.X">¶</a> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Input data.</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.y">¶</a> (<em>Ignored</em>) – Not used, present for API consistency by convention.</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.**kwargs"></span><strong>**kwargs</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_predict.params.**kwargs">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Arguments to be passed to <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 1.4.</span></p>
 </div>
@@ -1291,9 +1291,9 @@ and returns a transformed version of <cite>X</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.X"></span><strong>X</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Input samples.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.y"></span><strong>y</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>) or </em><em>(</em><em>n_samples</em><em>, </em><em>n_outputs</em><em>)</em><em>,                 </em><em>default=None</em>) – Target values (None for unsupervised transformations).</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.**fit_params"></span><strong>**fit_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Additional fit parameters.</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.X"></span><strong>X</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.X">¶</a> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Input samples.</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.y"></span><strong>y</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.y">¶</a> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>) or </em><em>(</em><em>n_samples</em><em>, </em><em>n_outputs</em><em>)</em><em>,                 </em><em>default=None</em>) – Target values (None for unsupervised transformations).</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.**fit_params"></span><strong>**fit_params</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.fit_transform.params.**fit_params">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Additional fit parameters.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1309,11 +1309,11 @@ and returns a transformed version of <cite>X</cite>.</p>
 <dt class="sig sig-object py" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.get_metadata_routing">
 <span class="sig-name descname"><span class="pre">get_metadata_routing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.get_metadata_routing" title="Link to this definition">¶</a></dt>
 <dd><p>Get metadata routing of this object.</p>
-<p>Please check <a class="reference external" href="https://scikit-learn.org/stable/metadata_routing.html#metadata-routing" title="(in scikit-learn v1.7)"><span class="xref std std-ref">User Guide</span></a> on how the routing
+<p>Please check <a class="reference external" href="https://scikit-learn.org/stable/metadata_routing.html#metadata-routing" title="(in scikit-learn v1.8)"><span class="xref std std-ref">User Guide</span></a> on how the routing
 mechanism works.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>routing</strong> – A <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.metadata_routing.MetadataRequest.html#sklearn.utils.metadata_routing.MetadataRequest" title="(in scikit-learn v1.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataRequest</span></code></a> encapsulating
+<dd class="field-odd"><p><strong>routing</strong> – A <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.utils.metadata_routing.MetadataRequest.html#sklearn.utils.metadata_routing.MetadataRequest" title="(in scikit-learn v1.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataRequest</span></code></a> encapsulating
 routing information.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1328,7 +1328,7 @@ routing information.</p>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.get_params.params.deep"></span><strong>deep</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default=True</em>) – If True, will return the parameters for this estimator and
+<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.get_params.params.deep"></span><strong>deep</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.get_params.params.deep">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default=True</em>) – If True, will return the parameters for this estimator and
 contained subobjects that are estimators.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1346,7 +1346,7 @@ contained subobjects that are estimators.</p>
 <dd><p>Predict the closest cluster for each sample in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.predict.params.X"></span><strong>X</strong> – {array-like, sparse matrix}, shape (n_query, n_features),                     or (n_query, n_indexed) if metric == ‘precomputed’
+<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.predict.params.X"></span><strong>X</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.predict.params.X">¶</a> – {array-like, sparse matrix}, shape (n_query, n_features),                     or (n_query, n_indexed) if metric == ‘precomputed’
 New data to predict.</p>
 </dd>
 </dl>
@@ -1363,11 +1363,11 @@ New data to predict.</p>
 <dt class="sig sig-object py" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_output">
 <span class="sig-name descname"><span class="pre">set_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_output" title="Link to this definition">¶</a></dt>
 <dd><p>Set output container.</p>
-<p>See <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_set_output.html#sphx-glr-auto-examples-miscellaneous-plot-set-output-py" title="(in scikit-learn v1.7)"><span>Introducing the set_output API</span></a>
+<p>See <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_set_output.html#sphx-glr-auto-examples-miscellaneous-plot-set-output-py" title="(in scikit-learn v1.8)"><span>Introducing the set_output API</span></a>
 for an example on how to use the API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_output.params.transform"></span><strong>transform</strong> (<em>{&quot;default&quot;</em><em>, </em><em>&quot;pandas&quot;</em><em>, </em><em>&quot;polars&quot;}</em><em>, </em><em>default=None</em>) – <p>Configure output of <cite>transform</cite> and <cite>fit_transform</cite>.</p>
+<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_output.params.transform"></span><strong>transform</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_output.params.transform">¶</a> (<em>{&quot;default&quot;</em><em>, </em><em>&quot;pandas&quot;</em><em>, </em><em>&quot;polars&quot;}</em><em>, </em><em>default=None</em>) – <p>Configure output of <cite>transform</cite> and <cite>fit_transform</cite>.</p>
 <ul class="simple">
 <li><p><cite>”default”</cite>: Default output format of a transformer</p></li>
 <li><p><cite>”pandas”</cite>: DataFrame output</p></li>
@@ -1393,12 +1393,12 @@ for an example on how to use the API.</p>
 <span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_params" title="Link to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
-(such as <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="(in scikit-learn v1.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
+(such as <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="(in scikit-learn v1.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
 parameters of the form <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s
 possible to update each component of a nested object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_params.params.**params"></span><strong>**params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Estimator parameters.</p>
+<dd class="field-odd"><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_params.params.**params"></span><strong>**params</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.set_params.params.**params">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Estimator parameters.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>self</strong> – Estimator instance.</p>
@@ -1416,10 +1416,10 @@ possible to update each component of a nested object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.X"></span><strong>X</strong> (<em>{array-like</em><em>, </em><em>sparse matrix}</em><em>, </em><em>shape</em><em> (</em><em>n_query</em><em>, </em><em>n_features</em><em>)</em><em>,                 or </em><em>(</em><em>n_query</em><em>, </em><em>n_indexed</em><em>) </em><em>if metric == 'precomputed'</em>) – Data to transform.</p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.Returns"></span><strong>Returns</strong></p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.-------"></span><strong>-------</strong></p></li>
-<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.X_new"></span><strong>X_new</strong> (<em>{array-like</em><em>, </em><em>sparse matrix}</em><em>, </em><em>shape=</em><em>(</em><em>n_query</em><em>, </em><em>n_clusters</em><em>)</em>) – X transformed in the new space of distances to cluster centers.</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.X"></span><strong>X</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.X">¶</a> (<em>{array-like</em><em>, </em><em>sparse matrix}</em><em>, </em><em>shape</em><em> (</em><em>n_query</em><em>, </em><em>n_features</em><em>)</em><em>,                 or </em><em>(</em><em>n_query</em><em>, </em><em>n_indexed</em><em>) </em><em>if metric == 'precomputed'</em>) – Data to transform.</p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.Returns"></span><strong>Returns</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.Returns">¶</a></p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.-------"></span><strong>-------</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.-------">¶</a></p></li>
+<li><p><span class="target" id="baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.X_new"></span><strong>X_new</strong><a class="paramlink headerlink reference internal" href="#baybe.utils.clustering_algorithms.third_party.kmedoids.KMedoids.transform.params.X_new">¶</a> (<em>{array-like</em><em>, </em><em>sparse matrix}</em><em>, </em><em>shape=</em><em>(</em><em>n_query</em><em>, </em><em>n_clusters</em><em>)</em>) – X transformed in the new space of distances to cluster centers.</p></li>
 </ul>
 </dd>
 </dl>
