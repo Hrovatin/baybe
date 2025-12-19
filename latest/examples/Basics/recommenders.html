@@ -1303,10 +1303,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments: 
-         Solvent             Base         Ligand  Temperature  Concentration
-357     p-Xylene  Cesium pivalate  (t-Bu)PhCPhos        120.0          0.057
-0    Butyl Ester   Cesium acetate  (t-Bu)PhCPhos         90.0          0.057
-14   Butyl Ester   Cesium acetate      BrettPhos        105.0          0.153
+         Solvent                Base                        Ligand  \
+27   Butyl Ester     Cesium pivalate                 (t-Bu)PhCPhos   
+299         DMAc  Potassium pivalate                 (t-Bu)PhCPhos   
+371     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
+
+     Temperature  Concentration  
+27          90.0          0.057  
+299         90.0          0.153  
+371         90.0          0.153  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_fake_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">,</span> <span class="n">campaign</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
@@ -1315,15 +1320,15 @@ as follows.</p>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Recommended experiments with fake measured values: 
-         Solvent             Base         Ligand  Temperature  Concentration  \
-357     p-Xylene  Cesium pivalate  (t-Bu)PhCPhos        120.0          0.057   
-0    Butyl Ester   Cesium acetate  (t-Bu)PhCPhos         90.0          0.057   
-14   Butyl Ester   Cesium acetate      BrettPhos        105.0          0.153   
+         Solvent                Base                        Ligand  \
+27   Butyl Ester     Cesium pivalate                 (t-Bu)PhCPhos   
+299         DMAc  Potassium pivalate                 (t-Bu)PhCPhos   
+371     p-Xylene     Cesium pivalate  Di-tert-butylphenylphosphine   
 
-         yield  
-357  70.793193  
-0    32.272360  
-14   89.795324  
+     Temperature  Concentration      yield  
+27          90.0          0.057 -52.848179  
+299         90.0          0.153  16.206154  
+371         90.0          0.153 -23.166839  
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span><span class="o">.</span><span class="n">add_measurements</span><span class="p">(</span><span class="n">recommendation</span><span class="p">)</span>
