@@ -33,13 +33,13 @@ baybe.exceptions
       IncompleteMeasurementsError
       InfeasibilityError
       InputDataTypeWarning
-      InvalidSurrogateModelError
       InvalidTargetValueError
       MinimumCardinalityViolatedWarning
       ModelNotTrainedError
       NoMCAcquisitionFunctionError
       NoMeasurementsError
       NoRecommendersLeftError
+      NonGaussianityError
       NotEnoughPointsLeftError
       NothingToSimulateError
       NumericalUnderflowError
