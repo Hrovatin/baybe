@@ -5,7 +5,7 @@ from __future__ import annotations
 import gc
 import math
 from abc import ABC
-from typing import ClassVar
+from typing import TYPE_CHECKING, ClassVar
 
 import numpy as np
 import numpy.typing as npt
@@ -21,6 +21,12 @@ from baybe.searchspace import SearchSpace
 from baybe.utils.basic import classproperty, convert_to_float
 from baybe.utils.sampling_algorithms import DiscreteSamplingMethod, sample_numerical_df
 from baybe.utils.validation import finite_float
+
+if TYPE_CHECKING:
+    from botorch.acquisition import AcquisitionFunction as BotorchAcquisitionFunction
+
+    from baybe.objectives.base import Objective
+    from baybe.surrogates.base import SurrogateProtocol
 
 
 ########################################################################################
@@ -241,6 +247,72 @@ class qLogNoisyExpectedImprovement(AcquisitionFunction):
 
     prune_baseline: bool = field(default=True, validator=instance_of(bool))
     """Auto-prune candidates that are unlikely to be the best."""
+
+
+@define(frozen=True)
+class EIPermutedVar(AcquisitionFunction):
+    """Expected Improvement with permuted per-point variances.
+
+    Computes EI but shuffles the posterior variance across candidate points while
+    keeping means intact. This breaks the natural mean-variance correlation for
+    sensitivity analysis of how much the variance structure drives EI rankings.
+
+    Note: This acquisition function is designed for discrete search spaces only.
+    For ``batch_size > 1`` (greedy sequential selection), the permutation is re-drawn
+    each round as the candidate set shrinks.
+    """
+
+    abbreviation: ClassVar[str] = "EIPermVar"
+
+    seed: int | None = field(default=None)
+    """Optional seed for reproducible permutation.
+
+    If ``None``, a random permutation is generated each evaluation call.
+    """
+
+    @override
+    @classproperty
+    def _non_botorch_attrs(cls: type[AttrsInstance]) -> tuple[str, ...]:
+        return (fields(cls).seed.name,)
+
+    @override
+    def to_botorch(
+        self,
+        surrogate: SurrogateProtocol,
+        searchspace: SearchSpace,
+        objective: Objective,
+        measurements: pd.DataFrame,
+        pending_experiments: pd.DataFrame | None = None,
+    ) -> BotorchAcquisitionFunction:
+        """Create the BoTorch-ready representation with permuted variance.
+
+        See :meth:`baybe.acquisition.base.AcquisitionFunction.to_botorch`.
+        """
+        import torch
+
+        from baybe.acquisition._permuted import _EIPermutedVariance
+        from baybe.utils.dataframe import to_tensor
+
+        botorch_model = surrogate.to_botorch()
+
+        # Compute best_f: max of objective-transformed posterior mean on training
+        # data, replicating the logic from BotorchAcquisitionFunctionBuilder
+        train_x = searchspace.transform(measurements, allow_extra=True)
+        batched = to_tensor(train_x).unsqueeze(-2)
+        with torch.no_grad():
+            posterior = botorch_model.posterior(batched)
+        mean = objective.to_botorch()(posterior.mean)
+        best_f = mean.squeeze(-2).max().item()
+
+        # Compute posterior_transform for the analytic path
+        posterior_transform = objective.to_botorch_posterior_transform()
+
+        return _EIPermutedVariance(
+            model=botorch_model,
+            best_f=best_f,
+            seed=self.seed,
+            posterior_transform=posterior_transform,
+        )
 
 
 ########################################################################################

@@ -1,0 +1,104 @@
+"""Tests for the EIPermutedVar acquisition function."""
+
+import numpy as np
+import pandas as pd
+import pytest
+
+from baybe.acquisition import EIPermutedVar, ExpectedImprovement
+from baybe.parameters.numerical import NumericalDiscreteParameter
+from baybe.searchspace import SearchSpace
+from baybe.surrogates.gaussian_process.core import GaussianProcessSurrogate
+from baybe.targets import NumericalTarget
+
+
+@pytest.fixture
+def setup():
+    """Provide a fitted surrogate, searchspace, objective, and measurements."""
+    values = np.linspace(0, 10, 20)
+    param = NumericalDiscreteParameter("x", values)
+    searchspace = SearchSpace.from_product(parameters=[param])
+    target = NumericalTarget("y")
+    objective = target.to_objective()
+
+    # Create some training data
+    rng = np.random.default_rng(42)
+    train_x = rng.choice(values, size=5, replace=False)
+    train_y = np.sin(train_x) + rng.normal(0, 0.1, size=5)
+    measurements = pd.DataFrame({"x": train_x, "y": train_y})
+
+    # Fit surrogate
+    surrogate = GaussianProcessSurrogate()
+    surrogate.fit(searchspace, objective, measurements)
+
+    # Candidates
+    candidates = pd.DataFrame({"x": values})
+
+    return surrogate, searchspace, objective, measurements, candidates
+
+
+def test_reproducibility_with_seed(setup):
+    """Same seed produces identical acquisition values."""
+    surrogate, searchspace, objective, measurements, candidates = setup
+
+    acqf = EIPermutedVar(seed=123)
+    values_1 = acqf.evaluate(
+        candidates, surrogate, searchspace, objective, measurements
+    )
+    values_2 = acqf.evaluate(
+        candidates, surrogate, searchspace, objective, measurements
+    )
+
+    pd.testing.assert_series_equal(values_1, values_2)
+
+
+def test_randomness_without_seed(setup):
+    """Without seed, different evaluations may produce different values."""
+    surrogate, searchspace, objective, measurements, candidates = setup
+
+    acqf = EIPermutedVar(seed=None)
+    values_1 = acqf.evaluate(
+        candidates, surrogate, searchspace, objective, measurements
+    )
+    values_2 = acqf.evaluate(
+        candidates, surrogate, searchspace, objective, measurements
+    )
+
+    # With 20 candidates, random permutations should almost certainly differ
+    assert not values_1.equals(values_2)
+
+
+def test_differs_from_standard_ei(setup):
+    """EIPermutedVar produces different values than standard EI."""
+    surrogate, searchspace, objective, measurements, candidates = setup
+
+    ei = ExpectedImprovement()
+    ei_values = ei.evaluate(candidates, surrogate, searchspace, objective, measurements)
+
+    perm_ei = EIPermutedVar(seed=42)
+    perm_values = perm_ei.evaluate(
+        candidates, surrogate, searchspace, objective, measurements
+    )
+
+    # Values should differ (permuted variance breaks the natural correlation)
+    assert not ei_values.equals(perm_values)
+
+
+def test_campaign_recommend(setup):
+    """EIPermutedVar works in the normal Campaign.recommend() loop."""
+    from baybe import Campaign
+    from baybe.recommenders.pure.bayesian.botorch import BotorchRecommender
+
+    surrogate, searchspace, objective, measurements, _ = setup
+
+    # EIPermutedVar is analytic (non-MC), so batch_size must be 1
+    recommender = BotorchRecommender(acquisition_function=EIPermutedVar(seed=7))
+    campaign = Campaign(
+        searchspace=searchspace,
+        objective=objective,
+        recommender=recommender,
+    )
+    campaign.add_measurements(measurements)
+    recommendations = campaign.recommend(batch_size=1)
+
+    assert len(recommendations) == 1
+    assert all(col in recommendations.columns for col in searchspace.parameter_names)
