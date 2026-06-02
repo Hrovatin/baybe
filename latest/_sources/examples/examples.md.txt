@@ -13,7 +13,7 @@ Custom Surrogates<Custom_Surrogates/Custom_Surrogates>
 Mixtures<Mixtures/Mixtures>
 Custom Hooks<Custom_Hooks/Custom_Hooks>
 Multi Armed Bandit<Multi_Armed_Bandit/Multi_Armed_Bandit>
-Transfer Learning<Transfer_Learning/Transfer_Learning>
 Backtesting<Backtesting/Backtesting>
 Transformations<Transformations/Transformations>
+Transfer Learning<Transfer_Learning/Transfer_Learning>
 ```

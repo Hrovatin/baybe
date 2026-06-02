@@ -1,4 +1,4 @@
-baybe.utils.validation.non\_inf\_float
+﻿baybe.utils.validation.non\_inf\_float
 ======================================
 
 .. currentmodule:: baybe.utils.validation
