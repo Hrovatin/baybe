@@ -291,7 +291,15 @@ class EIPermutedVar(AcquisitionFunction):
         import torch
 
         from baybe.acquisition._permuted import _EIPermutedVariance
+        from baybe.exceptions import IncompatibleAcquisitionFunctionError
         from baybe.utils.dataframe import to_tensor
+
+        if pending_experiments is not None and not self.supports_pending_experiments:
+            raise IncompatibleAcquisitionFunctionError(
+                f"The chosen acquisition function of type "
+                f"'{self.__class__.__name__}' "
+                f"does not support pending experiments."
+            )
 
         botorch_model = surrogate.to_botorch()
 

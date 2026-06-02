@@ -83,6 +83,26 @@ def test_differs_from_standard_ei(setup):
     assert not ei_values.equals(perm_values)
 
 
+def test_pending_experiments_raises(setup):
+    """Passing pending_experiments raises IncompatibleAcquisitionFunctionError."""
+    from baybe.exceptions import IncompatibleAcquisitionFunctionError
+
+    surrogate, searchspace, objective, measurements, candidates = setup
+
+    acqf = EIPermutedVar(seed=42)
+    pending = pd.DataFrame({"x": [5.0]})
+
+    with pytest.raises(IncompatibleAcquisitionFunctionError):
+        acqf.evaluate(
+            candidates,
+            surrogate,
+            searchspace,
+            objective,
+            measurements,
+            pending_experiments=pending,
+        )
+
+
 def test_campaign_recommend(setup):
     """EIPermutedVar works in the normal Campaign.recommend() loop."""
     from baybe import Campaign
