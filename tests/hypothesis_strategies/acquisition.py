@@ -3,6 +3,7 @@
 import hypothesis.strategies as st
 
 from baybe.acquisition import (
+    EIPermutedVar,
     ExpectedImprovement,
     LogExpectedImprovement,
     PosteriorMean,
@@ -56,6 +57,7 @@ def _reference_points(draw: st.DrawFn):
 
 # These acqfs are ordered roughly according to increasing complexity
 acquisition_functions = st.one_of(
+    st.builds(EIPermutedVar, seed=st.one_of(st.none(), st.integers(0, 2**31 - 1))),
     st.builds(ExpectedImprovement),
     st.builds(ProbabilityOfImprovement),
     st.builds(UpperConfidenceBound, beta=finite_floats()),
