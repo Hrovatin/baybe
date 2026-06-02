@@ -50,10 +50,22 @@ class _EIPermutedVariance(AnalyticAcquisitionFunction):
         Returns:
             A tensor of shape ``[batch_shape]`` with EI values computed using
             permuted variances.
+
+        Raises:
+            ValueError: If the model has batch dimensions (sigma has more than
+                2 dimensions).
         """
         mean, sigma = self._mean_and_sigma(X)
 
-        # Permute sigma across the candidate (batch) dimension
+        # Permute sigma across the candidate (batch) dimension.
+        # This assumes no leading batch dimensions on the model — the permutation
+        # operates on dim 0, which must be the candidate count.
+        if sigma.ndim > 2:
+            raise ValueError(
+                f"'{self.__class__.__name__}' does not support models with batch "
+                f"dimensions. Expected sigma with at most 2 dimensions, "
+                f"got shape {sigma.shape}."
+            )
         n = sigma.shape[0]
         if self.seed is not None:
             gen = torch.Generator(device=sigma.device).manual_seed(self.seed)
