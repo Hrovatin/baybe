@@ -250,19 +250,22 @@ class qLogNoisyExpectedImprovement(AcquisitionFunction):
 
 
 @define(frozen=True)
-class EIPermutedVar(AcquisitionFunction):
-    """Expected Improvement with permuted per-point variances.
+class LogEIPermutedVar(AcquisitionFunction):
+    """Log Expected Improvement with permuted per-point variances.
 
-    Computes EI but shuffles the posterior variance across candidate points while
+    Computes log-EI but shuffles the posterior variance across candidate points while
     keeping means intact. This breaks the natural mean-variance correlation for
     sensitivity analysis of how much the variance structure drives EI rankings.
+
+    Uses numerically stable log-space computation following BoTorch's
+    ``LogExpectedImprovement``.
 
     Note: This acquisition function is designed for discrete search spaces only.
     For ``batch_size > 1`` (greedy sequential selection), the permutation is re-drawn
     each round as the candidate set shrinks.
     """
 
-    abbreviation: ClassVar[str] = "EIPermVar"
+    abbreviation: ClassVar[str] = "LogEIPermVar"
 
     seed: int | None = field(default=None)
     """Optional seed for reproducible permutation.
@@ -290,7 +293,9 @@ class EIPermutedVar(AcquisitionFunction):
         """
         import torch
 
-        from baybe.acquisition._permuted import _EIPermutedVariance
+        from baybe.acquisition._permuted import (
+            _LogExpectedImprovementPermutedVariance,
+        )
         from baybe.exceptions import IncompatibleAcquisitionFunctionError
         from baybe.utils.dataframe import to_tensor
 
@@ -315,7 +320,7 @@ class EIPermutedVar(AcquisitionFunction):
         # Compute posterior_transform for the analytic path
         posterior_transform = objective.to_botorch_posterior_transform()
 
-        return _EIPermutedVariance(
+        return _LogExpectedImprovementPermutedVariance(
             model=botorch_model,
             best_f=best_f,
             seed=self.seed,
