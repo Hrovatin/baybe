@@ -1,10 +1,10 @@
-"""Tests for the EIPermutedVar acquisition function."""
+"""Tests for the LogEIPermutedVar acquisition function."""
 
 import numpy as np
 import pandas as pd
 import pytest
 
-from baybe.acquisition import EIPermutedVar, ExpectedImprovement
+from baybe.acquisition import LogEIPermutedVar, LogExpectedImprovement
 from baybe.parameters.numerical import NumericalDiscreteParameter
 from baybe.searchspace import SearchSpace
 from baybe.surrogates.gaussian_process.core import GaussianProcessSurrogate
@@ -40,7 +40,7 @@ def test_reproducibility_with_seed(setup):
     """Same seed produces identical acquisition values."""
     surrogate, searchspace, objective, measurements, candidates = setup
 
-    acqf = EIPermutedVar(seed=123)
+    acqf = LogEIPermutedVar(seed=123)
     values_1 = acqf.evaluate(
         candidates, surrogate, searchspace, objective, measurements
     )
@@ -55,7 +55,7 @@ def test_randomness_without_seed(setup):
     """Without seed, different evaluations may produce different values."""
     surrogate, searchspace, objective, measurements, candidates = setup
 
-    acqf = EIPermutedVar(seed=None)
+    acqf = LogEIPermutedVar(seed=None)
     values_1 = acqf.evaluate(
         candidates, surrogate, searchspace, objective, measurements
     )
@@ -67,20 +67,22 @@ def test_randomness_without_seed(setup):
     assert not values_1.equals(values_2)
 
 
-def test_differs_from_standard_ei(setup):
-    """EIPermutedVar produces different values than standard EI."""
+def test_differs_from_standard_log_ei(setup):
+    """LogEIPermutedVar produces different values than standard LogEI."""
     surrogate, searchspace, objective, measurements, candidates = setup
 
-    ei = ExpectedImprovement()
-    ei_values = ei.evaluate(candidates, surrogate, searchspace, objective, measurements)
+    log_ei = LogExpectedImprovement()
+    log_ei_values = log_ei.evaluate(
+        candidates, surrogate, searchspace, objective, measurements
+    )
 
-    perm_ei = EIPermutedVar(seed=42)
-    perm_values = perm_ei.evaluate(
+    perm_log_ei = LogEIPermutedVar(seed=42)
+    perm_values = perm_log_ei.evaluate(
         candidates, surrogate, searchspace, objective, measurements
     )
 
     # Values should differ (permuted variance breaks the natural correlation)
-    assert not ei_values.equals(perm_values)
+    assert not log_ei_values.equals(perm_values)
 
 
 def test_pending_experiments_raises(setup):
@@ -89,7 +91,7 @@ def test_pending_experiments_raises(setup):
 
     surrogate, searchspace, objective, measurements, candidates = setup
 
-    acqf = EIPermutedVar(seed=42)
+    acqf = LogEIPermutedVar(seed=42)
     pending = pd.DataFrame({"x": [5.0]})
 
     with pytest.raises(IncompatibleAcquisitionFunctionError):
@@ -104,14 +106,14 @@ def test_pending_experiments_raises(setup):
 
 
 def test_campaign_recommend(setup):
-    """EIPermutedVar works in the normal Campaign.recommend() loop."""
+    """LogEIPermutedVar works in the normal Campaign.recommend() loop."""
     from baybe import Campaign
     from baybe.recommenders.pure.bayesian.botorch import BotorchRecommender
 
     surrogate, searchspace, objective, measurements, _ = setup
 
-    # EIPermutedVar is analytic (non-MC), so batch_size must be 1
-    recommender = BotorchRecommender(acquisition_function=EIPermutedVar(seed=7))
+    # LogEIPermutedVar is analytic (non-MC), so batch_size must be 1
+    recommender = BotorchRecommender(acquisition_function=LogEIPermutedVar(seed=7))
     campaign = Campaign(
         searchspace=searchspace,
         objective=objective,

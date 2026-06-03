@@ -1,8 +1,8 @@
 """Acquisition function wrappers."""
 
 from baybe.acquisition.acqfs import (
-    EIPermutedVar,
     ExpectedImprovement,
+    LogEIPermutedVar,
     LogExpectedImprovement,
     PosteriorMean,
     PosteriorStandardDeviation,
@@ -29,7 +29,7 @@ PSTD = PosteriorStandardDeviation
 qPSTD = qPosteriorStandardDeviation
 qSR = qSimpleRegret
 EI = ExpectedImprovement
-EIPermVar = EIPermutedVar
+LogEIPermVar = LogEIPermutedVar
 qEI = qExpectedImprovement
 qKG = qKnowledgeGradient
 LogEI = LogExpectedImprovement
@@ -56,7 +56,7 @@ __all__ = [
     # Simple Regret
     "qSimpleRegret",
     # Expected Improvement
-    "EIPermutedVar",
+    "LogEIPermutedVar",
     "ExpectedImprovement",
     "qExpectedImprovement",
     "LogExpectedImprovement",
@@ -88,7 +88,7 @@ __all__ = [
     "qSR",
     # Expected Improvement
     "EI",
-    "EIPermVar",
+    "LogEIPermVar",
     "qEI",
     "LogEI",
     "qLogEI",
